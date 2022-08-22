@@ -1,0 +1,1740 @@
+/*General*/
+.container{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    display: flex;
+    padding: 0px 10px;
+}
+a{
+    color: #312121;
+    text-decoration: none;
+}
+
+ol{
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+
+
+/*PANEL*/
+.panel{
+    flex-basis: 20%;
+    background-color: #FFFFFF;
+}
+/*logo*/
+.logo{
+    border-bottom: #DEDEDE 1px solid;
+}
+.logo img{
+    width: max-content;
+    margin: 0% 20%;
+}
+/*animation_options*/
+.animation_options{
+    margin-top: 30px;
+    padding-left: 10px;
+}
+.animation_options div{
+    padding: 10px 0px;
+}
+.animation_options div a #icon{
+    opacity: 00%;
+}
+.animation_options div a #icon:hover{
+    opacity: 100%;
+}
+/*options*/
+.options{
+    margin-top: 40px;
+}
+.options div{
+    padding: 10px 0px;
+}
+.options div a{
+    padding-left: 10px;
+}
+
+/*BODY*/
+
+.body{
+    flex-basis: 80%;
+    background-color: #DEDEDE;
+}
+/*Tab*/
+.auth_tab{
+    display: flex;
+}
+.auth_tab .menu{
+    width: 70%;
+}
+.menu ol{
+    display: flex;
+    margin-left: 10%;
+}
+.menu ol li{
+    padding: 0 20px;
+}
+.profile{
+    display: flex;
+    align-self: center;
+}
+.unauth_tab{
+    display: flex;
+}
+.unauth_tab .menu{
+    width: 70%;
+}
+.menu_bars{
+    align-self: center;
+    padding-right: 10%;
+    display: none;
+}
+.profile button{
+    padding: 10px;
+    margin: 5px;
+    border: #3A0CA3 1px solid;
+    cursor: pointer;
+}
+.profile button:hover{
+    border: none;
+    color: #FFFFFF;
+    background-color: #3A0CA3;
+}
+.profile button:active{
+    border: none;
+    color: #FFFFFF;
+    background-color: #3A0CA3;
+}
+/*Animation_body*/
+.element_options{
+    margin: 5% 0% 0% 5%;
+}
+.element_options i{
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px 7px 7px 5px;
+    border: #2F2D33 0.5px solid;
+    border-radius: 5px;
+}
+.animation_body{
+    display: flex;
+    flex-direction: column;
+}
+.animation_body div p{
+    padding-top: 10%;
+}
+.animation_body #element{
+    font-size: 800%;
+    font-weight: bolder;
+    margin: 0% 20%;
+}
+
+/*OVERLAYS*/
+.profileOverlay{
+    transform: translate(-1000px, 00px);
+}
+
+.favouriteOverlay{
+    transform: translate(-2000px, 00px);
+} 
+#userNoteOverlay{
+    display: none;
+} 
+#editNoteOverlay{
+    display: none;
+}
+.profileOverlay.profileShow{
+    transform: translate(650px, -600px);
+}
+.favouriteOverlay.favouriteShow{
+    transform: translate(200px, -400px);
+}
+
+/*ANIMATION PAGE MEDIA QUERIES*/
+@media(max-width: 1200px) {
+    .menu_bars{
+        display: block;
+        margin: 0%;
+    }
+    .menu ol{
+        display: block;
+        position: absolute;
+        margin: 0%;
+        padding: 0%;
+        left: 500px;
+        top: 70px;
+        background: #f2f2f2;
+        opacity: 0.85;
+        transform: translateY(-500px);
+    }
+    .menu ol li{
+        padding-top: 10px;
+        border-bottom: #ccc 0.5px solid;
+    }
+    .menu ol li:hover{
+        opacity: 0.5;
+    }
+    .menu ol li:last-child{
+        margin-bottom: 10px;
+        border-bottom: none;
+    }
+    .menu ol.show{
+        transform: translateY(0px);
+    }
+    .animation_options{
+        margin-top: 30px;
+        padding-left: 0px;
+        font-size: smaller;
+    }
+    #element{
+    padding-top: 10%;
+    font-size: 1px;
+    }
+    .auth_tab{
+        display: flex;
+        justify-content: space-between;
+        width: max-content;
+    }
+    .auth_tab div{
+        padding: 0% 50%;
+    }
+    .unauth_tab{
+        display: flex;
+        justify-content: space-between;
+        width: max-content;
+    }
+}
+
+
+
+/*ANIMATION PROPER*/
+
+.element-animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+  }
+  
+  .element-animated.short {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+  }
+  
+  .element-animated.long {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+  }
+  
+  .element-animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  
+  @-webkit-keyframes move_left {
+    0% {
+      -webkit-transform: translateX(200px);
+      transform: translateX(200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes move_left {
+    0% {
+      -webkit-transform: translateX(200px);
+      transform: translateX(200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .move_left {
+    -webkit-animation-name: move_left;
+    animation-name: move_left;
+  }
+  @-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    60% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+    }
+  }
+  .bounce {
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+  }
+  @-webkit-keyframes move_down {
+    0% {
+      -webkit-transform: translateY(-200px);
+      transform: translateY(-200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes move_down {
+    0% {
+      -webkit-transform: translateY(-200px);
+      transform: translateY(-200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .move_down {
+    -webkit-animation-name: move_down;
+    animation-name: move_down;
+  }
+  @-webkit-keyframes move_up {
+    0% {
+      -webkit-transform: translateY(200px);
+      transform: translateY(200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes move_up {
+    0% {
+      -webkit-transform: translateY(200px);
+      transform: translateY(200px);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .move_up {
+    -webkit-animation-name: move_up;
+    animation-name: move_up;
+  }
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    animation-name: fade;
+  }
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .blink {
+    -webkit-animation-name: blink;
+    animation-name: blink;
+  }
+  @-webkit-keyframes tremble {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      -webkit-transform: translateX(5px);
+      transform: translateX(5px);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes tremble {
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+      -webkit-transform: translateX(5px);
+      transform: translateX(5px);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  .tremble {
+    -webkit-animation-name: tremble;
+    animation-name: tremble;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes rotate {
+    0% {
+      -webkit-transform: rotate(-1turn);
+      transform: rotate(-1turn);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      -webkit-transform: rotate(-1turn);
+      transform: rotate(-1turn);
+    }
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .rotate {
+    -webkit-animation-name: rotate;
+    animation-name: rotate;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+  @-webkit-keyframes appear-from-right {
+    0% {
+      -webkit-transform: translateX(200px);
+              transform: translateX(200px);
+      opacity: 0;
+    }
+    40% {
+      opacity: .7;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: none;
+              transform: none;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes appear-from-right {
+    0% {
+      -webkit-transform: translateX(200px);
+              transform: translateX(200px);
+      opacity: 0;
+    }
+    40% {
+      opacity: .7;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: none;
+              transform: none;
+      opacity: 1;
+    }
+  }
+  
+  .appear-from-right {
+    -webkit-animation-name: appear-from-right;
+            animation-name: appear-from-right;
+    -webkit-animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+            animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+  }
+
+/*EDIT NOTES OVERLAY*/
+.edit {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 15px;
+}
+.head {
+    width: 100%;
+    height: 100%;
+    background-color: #2f2d33;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9%;
+    padding: 1% 0 1% 0;
+}
+.head1 {
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+#color {
+    background-color: #2f2d33;
+    color: #f6f5f7;
+    border: none;
+}
+.change {
+    background-color: #866ac4;
+    border: solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.one {
+    background-color: #ffcccc;
+}
+.two {
+    background-color: #866ac4;
+}
+.three {
+    background-color: #3a0ca3;
+}
+.four {
+    background-color: #00f8a9;
+}
+.five {
+    background-color: #00574e;
+}
+.stroke {
+    background-color: #8c8a94;
+    border: 1px solid #8c8a94;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.head2 {
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+.bullet,
+.pin,
+.submit,
+.delete {
+    font-size: xx-large;
+    color: #f6f5f7;
+}
+.str1 {
+    order: 3;
+}
+.head3 {
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+}
+.str2 {
+    order: 5;
+}
+.head4 {
+    flex: none;
+    order: 6;
+    flex-grow: 0;
+}
+.str3 {
+    order: 7;
+}
+.head5 {
+    flex: none;
+    order: 8;
+    flex-grow: 0;
+}
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    width: 99.5%;
+    height: 100%;
+    background-color: #866ac4;
+}
+textarea:focus {
+    outline: none;
+}
+@media screen and (max-width:1024px) {
+    .text {
+        width: 99.2%;
+    }
+
+    .head {
+        gap: 9%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:768px) {
+    .text {
+        width: 99%;
+    }
+
+    .head {
+        gap: 8%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:701px) and (min-width:566px) {
+    .text {
+        width: 98.9%;
+    }
+
+    .head {
+        gap: 8%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:565px) and (min-width:493px) {
+    .text {
+        width: 98.4%;
+    }
+
+    .head {
+        gap: 6.7%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:492px) and (min-width:426px) {
+    .text {
+        width: 98.3%;
+    }
+
+    .head {
+        gap: 6.5%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:425px) {
+    .text {
+        width: 98.3%;
+    }
+
+    .head {
+        gap: 6%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: x-large;
+
+    }
+}
+@media screen and (max-width:375px) {
+    .text {
+        width: 98%;
+    }
+
+    .head {
+        gap: 6%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: large;
+    }
+}
+@media screen and (max-width:320px) {
+    .text {
+        width: 97.5%;
+    }
+
+    .head {
+        gap: 5%;
+    }
+
+    .bullet,
+    .pin,
+    .submit,
+    .delete {
+        font-size: large;
+    }
+}
+
+/*FAVOURITE OVERLAY*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+.favouritecard {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    border-radius: 8px;
+}
+.searchbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 100%;
+    height: 44px;
+    background-color: #ede3ff;
+    border-radius: 25px;
+}
+.iconify {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.bxsearch {
+    margin-left: 5px;
+}
+.bxfilter{
+    margin-right: 5px;
+}
+.searchinput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 8px;
+    width: 70%;
+    height: 44px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+#search {
+    width: 70%;
+    height: 21px;
+    font-style: normal;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2f2d33;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    border: none;
+    background-color: #ede3ff;
+}
+input:focus {
+    outline: none;
+}
+.move {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+}
+.direction {
+    font-style: normal;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #2f2d33;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.icon {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.moveup {
+    top: 68px;
+}
+.movedown {
+    top: 122px;
+}
+.moveleft {
+    top: 176px;
+}
+.moveblink {
+    top: 230px;
+}
+.movebounce {
+    top: 284px;
+}
+.movefade {
+    top: 333px;
+}
+@media screen and (max-width:375px) {
+    .direction {
+        font-size: 15px;
+    }
+}
+
+/*PROFILE OVERLAY*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+.profilecard {
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
+
+.profilehead {
+    position: absolute;
+    background-color: #d8c1ff;
+    width: 100%;
+    height: 500%;
+    border-radius: 8px;
+}
+
+.end {
+    position: absolute;
+    left: 94%;
+    top: 15%;
+}
+
+.end:hover {
+    cursor: pointer;
+}
+
+.profilename {
+    background-color: #866ac4;
+    position: absolute;
+    height: 450%;
+    width: 10%;
+    left: 34%;
+    top: 300%;
+    border-radius: 50%;
+}
+
+.name {
+    position: absolute;
+    top: 400%;
+    left: 36%;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 370%;
+    font-style: normal;
+    line-height: 56px;
+}
+
+.fullname {
+    position: relative;
+    top: 230px;
+    left: 33%;
+    color: #2f2d33;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 200%;
+    line-height: 24px;
+}
+
+.email {
+    position: absolute;
+    width: 35px;
+    height: 21px;
+    left: 36%;
+    top: 290px;
+    font-style: normal;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 180%;
+    line-height: 21px;
+    color: #2f2d33;
+}
+
+.changepass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+
+    left: 2%;
+    top: 400px;
+    text-decoration: none;
+}
+
+.passwords {
+    width: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 180%;
+    line-height: 21px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color: #2f2d33;
+}
+
+.iconify {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.none {
+    text-decoration: none;
+    color: #2f2d33;
+}
+
+.note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+
+    left: 2%;
+    top: 470px;
+}
+
+.notewords {
+    width: 100%;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 180%;
+    line-height: 21px;
+    color: #2f2d33;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    text-decoration: none;
+}
+
+.favourites {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+
+    left: 2%;
+    top: 540px;
+}
+
+.favwords {
+    width: 100%;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 180%;
+    line-height: 21px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    left: 2%;
+    top: 610px;
+}
+
+.logwords {
+    width: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 180%;
+    line-height: 21px;
+    color: #2f2d33;
+    flex: none;
+    flex-grow: 0;
+}
+
+@media screen and (max-width:2230px) {
+    .profilename {
+        width: 15%;
+        height: 470%;
+        top: 245%;
+    }
+
+    .name {
+        left: 37.5%;
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .profilehead {
+        height: 400%;
+    }
+
+    .profilename {
+        width: 15%;
+        left: 40%;
+        top: 200%;
+    }
+
+    .name {
+        left: 43%;
+        font-size: 310%;
+        top: 300%;
+    }
+
+    .fullname {
+        left: 39%;
+        font-size: 140%;
+        top: 180px;
+    }
+
+    .email {
+        left: 43%;
+        font-size: 120%;
+        top: 225px;
+    }
+
+    .changepass {
+        top: 280px;
+
+    }
+
+    .passwords {
+        font-size: 120%;
+    }
+
+    .note {
+        top: 330px;
+
+    }
+
+    .notewords {
+        font-size: 120%;
+    }
+
+    .favourites {
+        top: 380px;
+
+    }
+
+    .favwords {
+        font-size: 120%;
+    }
+
+    .logout {
+        top: 430px;
+
+    }
+
+    .logwords {
+        font-size: 120%;
+    }
+}
+
+@media screen and (max-width:1170px) {
+    .profilename {
+        width: 18%;
+        height: 318%;
+        top: 245%;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .profilehead {
+        height: 300%;
+    }
+
+    .end {
+        left: 93%;
+    }
+
+    .profilename {
+        width: 17%;
+        height: 320%;
+        left: 40%;
+        top: 170%;
+    }
+
+    .name {
+        left: 43%;
+        font-size: 250%;
+        top: 220%;
+    }
+
+    .fullname {
+        left: 40%;
+        font-size: 120%;
+        top: 140px;
+    }
+
+    .email {
+        left: 44%;
+        font-size: 100%;
+        top: 170px;
+    }
+
+    .changepass {
+        top: 220px;
+    }
+
+    .passwords {
+        font-size: 100%;
+    }
+
+    .note {
+        top: 270px;
+
+    }
+
+    .notewords {
+        font-size: 100%;
+    }
+
+    .favourites {
+        top: 320px;
+
+    }
+
+    .favwords {
+        font-size: 100%;
+    }
+
+    .logout {
+        top: 370px;
+
+    }
+
+    .logwords {
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .profilehead {
+        height: 250%;
+    }
+
+    .end {
+        left: 90%;
+    }
+
+    .profilename {
+        width: 17%;
+        height: 250%;
+        left: 40%;
+        top: 130%;
+    }
+
+    .name {
+        left: 43%;
+        font-size: 180%;
+        top: 140%;
+    }
+
+    .fullname {
+        left: 40%;
+        font-size: 80%;
+        top: 110px;
+    }
+
+    .email {
+        left: 44%;
+        font-size: 70%;
+        top: 135px;
+    }
+
+    .changepass {
+        top: 180px;
+
+    }
+
+    .passwords {
+        font-size: 70%;
+    }
+
+    .note {
+        top: 220px;
+
+    }
+
+    .notewords {
+        font-size: 70%;
+    }
+
+    .favourites {
+        top: 260px;
+
+    }
+
+    .favwords {
+        font-size: 70%;
+    }
+
+    .logout {
+        top: 300px;
+    }
+
+    .logwords {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width:580px) {
+    .end {
+        left: 85%;
+    }
+
+    .profilename {
+        width: 22%;
+    }
+
+    .name {
+        left: 44%;
+    }
+
+    .changepass {
+        margin-left: 15%;
+    }
+
+    .note {
+        margin-left: 15%;
+    }
+
+    .favourites {
+        margin-left: 15%;
+    }
+
+    .logout {
+        margin-left: 15%;
+    }
+
+
+}
+
+@media screen and (max-width:425px) {
+    .profilehead {
+        height: 200%;
+    }
+
+    .end {
+        left: 86%;
+    }
+
+    .profilename {
+        width: 22%;
+        height: 200%;
+        left: 40%;
+        top: 100%;
+    }
+
+    .name {
+        left: 44%;
+        font-size: 140%;
+        top: 90%;
+    }
+
+    .fullname {
+        left: 38%;
+        font-size: 70%;
+        top: 85px;
+    }
+
+    .email {
+        left: 44%;
+        font-size: 60%;
+        top: 105px;
+    }
+
+    .iconify {
+        width: 10%;
+    }
+
+    .changepass {
+        top: 140px;
+        margin-left: 6%;
+    }
+
+    .passwords {
+        font-size: 70%;
+    }
+
+    .note {
+        top: 170px;
+        margin-left: 8%;
+
+    }
+
+    .notewords {
+        font-size: 70%;
+    }
+
+    .favourites {
+        top: 200px;
+        margin-left: 8%;
+    }
+
+    .favwords {
+        font-size: 70%;
+    }
+
+    .logout {
+        top: 230px;
+        margin-left: 8%;
+    }
+
+    .logwords {
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .profilehead {
+        height: 200%;
+    }
+
+    .profilename {
+        width: 24%;
+        height: 180%;
+        left: 40%;
+        top: 100%;
+    }
+
+    .name {
+        left: 44%;
+        font-size: 120%;
+        top: 80%;
+    }
+
+    .fullname {
+        left: 39%;
+        font-size: 60%;
+        top: 80px;
+    }
+
+    .email {
+        left: 45%;
+        font-size: 50%;
+        top: 100px;
+    }
+
+    .iconify {
+        width: 10%;
+    }
+
+    .changepass {
+        top: 130px;
+        margin-left: 8%;
+
+    }
+
+    .passwords {
+        font-size: 70%;
+    }
+
+    .note {
+        top: 160px;
+        margin-left: 10%;
+    }
+
+    .notewords {
+        font-size: 70%;
+    }
+
+    .favourites {
+        top: 190px;
+        margin-left: 10%;
+    }
+
+    .favwords {
+        font-size: 70%;
+    }
+
+    .logout {
+        top: 220px;
+        margin-left: 10%;
+    }
+
+    .logwords {
+        font-size: 70%;
+    }
+
+}
+
+/*USER NOTES OVERLAY*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+.note {
+    width: 80%;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+.find {
+    width: 3%;
+    height: 1%;
+    margin: 2% 5% 1% 5%;
+}
+
+.arrow {
+    width: 3%;
+    height: 1%;
+    margin: 2% 5% 1% 5%;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+#search {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 18px;
+    color: #2f2d33;
+    border: none;
+    width: 50%;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+input:focus {
+    outline: none;
+}
+
+.line {
+    width: 90%;
+    border: 2px solid rgba(0, 0, 0, 0.29);
+}
+
+.add {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 5%;
+    width: 20%;
+    height: 5%;
+    background-color: #432499;
+    border-radius: 10px;
+    margin: 3% 74% 5%;
+
+}
+
+.plus {
+    color: #f6f5f7;
+    width: 20%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.add_note {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    font-style: normal;
+    width: 50%;
+    color: #f6f5f7;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.none {
+    text-decoration: none;
+    color: inherit;
+}
+
+#notes {
+    width: 80%;
+}
+
+.messages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.colortime {
+    margin: 0 5% 1% 5%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: relative;
+
+}
+.pin{
+    position: absolute;
+    top: 0%;
+    left: 65%;
+}
+
+.notecolor {
+    width: 40px;
+    height: 40px;
+    border: solid #432499;
+    border-radius: 50%;
+    background-color: #432499;
+
+}
+
+.time {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    color: #4F4D54;
+}
+
+.essay {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.hessay {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.pessay {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #4F4D54;
+}
+
+.publish {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #4F4D54;
+}
+
+.threedot {
+    width: 3%;
+    height: 1%;
+    margin: 0 5% 1% 5%;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+
+}
+
+.threedot:hover {
+    background-color: #4F4D54;
+    color: #fff;
+}
+
+.dropdown {
+    display: none;
+    padding: 0px;
+    gap: 10px;
+    background-color: #2F2D33;
+    width: 112px;
+    height: 128px;
+}
+
+.edit,
+.unpin,
+.delete {
+    padding: 8px 12px;
+    text-decoration: none;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 13px;
+    color: #fff;
+    border-bottom: solid 1px #fff;
+}
+
+.threedot:hover .dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width:768px) {
+    .add {
+        width: 30%;
+        margin: 3% 64% 5%;
+    }
+
+    .plus {
+        width: 20%;
+    }
+
+    .add_note {
+        width: 50%;
+    }
+
+    .messages {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .add {
+        width: 50%;
+        margin: 3% 43% 5%;
+    }
+
+    .plus {
+        width: 20%;
+    }
+
+    .add_note {
+        width: 50%;
+    }
+
+    .messages {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .add {
+        width: 60%;
+        margin: 3% 33% 5%;
+    }
+
+    .plus {
+        width: 20%;
+    }
+
+    .add_note {
+        width: 60%;
+    }
+}
+
+
